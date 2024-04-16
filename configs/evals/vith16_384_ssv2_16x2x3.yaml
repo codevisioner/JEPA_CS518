@@ -4,17 +4,17 @@ tag: ssv2-16x2x3
 eval_name: video_classification_frozen
 resume_checkpoint: false
 data:
-  dataset_train: /content/drive/MyDrive/My_files/Courses/CS518/data/Data_train_excel.csv
-  dataset_val: /content/drive/MyDrive/My_files/Courses/CS518/data/Data_val_excel.csv
+  dataset_train: /home/mahtab/jepa/data/Phase_1/train.csv
+  dataset_val: /home/mahtab/jepa/data/Phase_1/train.csv
   dataset_type: VideoDataset
-  num_classes: 174
+  num_classes: 2
   frames_per_clip: 16
   num_segments: 2
   num_views_per_segment: 3
   frame_step: 4
 optimization:
   attend_across_segments: true
-  num_epochs: 2
+  num_epochs: 10
   resolution: 384
   batch_size: 4
   weight_decay: 0.01
@@ -34,6 +34,6 @@ pretrain:
   tight_silu: false
   use_sdpa: true
   patch_size: 16
-  folder: /content/drive/MyDrive/My_files/Courses/CS518/jepa/checkpoints/
+  folder: /home/mahtab/jepa/checkpoints/
   checkpoint: vitl16.pth.tar  # name of pretrained model file inside folder
   write_tag: jepa
